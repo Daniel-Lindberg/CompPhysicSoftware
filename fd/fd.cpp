@@ -13,7 +13,7 @@
 //  ||                For: CU-Boulder CVEN 5838-200 and -200B                     ||
 //  ||                     (Not for distribution outside of class)                ||
 //  ||                                                                            ||
-//  ||          Copyright: 2017-2019 Scott Runnels                                ||
+//  ||          Copyright: 2017-2018 Scott Runnels                                ||
 //  ||                                                                            ||
 //  ================================================================================
 
@@ -76,9 +76,9 @@ public:
 
   LaplacianOnGrid(int ncell_x, int ncell_y, string _Name )
   {
-    nx     = ncell_x + 1;
+    nx     = ncell_x + 1; //number of points = number of cells +1
     ny     = ncell_y + 1;
-    nrows  = nx*ny;
+    nrows  = nx*ny; //size of our matrix
     length = 1.;
     dx     = length / (nx-1);
     Name   = _Name;
@@ -162,7 +162,7 @@ public:
 //  ||
 //  ||
 //  ==
-
+/*
 int main()
 {
 
@@ -199,3 +199,4 @@ int main()
   F.plot("phi",F.phi);      
 
 }
+*/
