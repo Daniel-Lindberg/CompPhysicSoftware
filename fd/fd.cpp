@@ -129,8 +129,8 @@ public:
     iLOOP
       {
 	int p,j;
-	p = pid(i, 1);  A[ p ] [ p ] = 1.- (0.1 * j) ;  b[ p ] =  1.-0.955;
-	p = pid(i,ny);  A[ p ] [ p ] = 1.-(0.1 * j) ;  b[ p ] = -1.-0.955;
+	p = pid(i, 1);  A[ p ] [ p ] = 1.- (0.1 * i) ;  b[ p ] =  1.-0.955;
+	p = pid(i,ny);  A[ p ] [ p ] = 1.-(0.1 * i) ;  b[ p ] = -1.-0.955;
       }
     jLOOP
       {
