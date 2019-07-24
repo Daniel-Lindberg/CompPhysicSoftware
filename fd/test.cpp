@@ -75,8 +75,30 @@ int test3()
 	}
 	//asert that this exception is thrown
 	assert(exception_thrown);
-
+	return 0;
 }
+
+int manufacturedMethod()
+{
+	/*
+		The manufactured method is to obtain the manufactured
+		method of solutions for the finite difference code.
+	*/
+	// My manufactured solution is going to be 10 x 10 array
+	// with max iterations of 100
+
+	LaplacianOnGrid *manufactured = new LaplacianOnGrid(10,10, "manufactured" );
+	manufactured->FormLS();
+	manufactured->GaussSeidel(100, manufactured->b , manufactured->phi );
+	// Used to generate the manufactured solution
+	//manufactured->plot("manufactured_phi", manufactured->phi);
+	//LaplacianOnGrid *manufactured_copy = 
+
+	//Clean up the memory afterwards
+	delete manufactured;
+	return 0;
+
+} 
 
 int RunTests()
 {
@@ -89,6 +111,7 @@ int RunTests()
 	printf("Running test 3\n");
 	test3();
 	printf("Finished test 3\n");	
+	manufacturedMethod();
 	return 0;
 }
 
