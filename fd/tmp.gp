@@ -1,3 +1,3 @@
 set term postscript enh color
 set output "tmp.ps"
-splot "F_phi.plt" w l
+splot "manufactured_manufacted_phi.plt" w l
