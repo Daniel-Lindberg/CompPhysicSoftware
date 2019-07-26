@@ -64,7 +64,7 @@ class LaplacianOnGrid
 public:
 
   int nx    , ny   , nrows;
-  _D_ length, dx;
+  _D_ length, dx, dy;
   VDD A ;    VD  phi ;  VD  b ;
   string Name;
 
@@ -81,6 +81,7 @@ public:
     nrows  = nx*ny; //size of our matrix
     length = 1.;
     dx     = length / (nx-1);
+    dy     = length / (ny-1);
     Name   = _Name;
 
     A.resize(nrows+1); rLOOP A[r].resize(nrows+1);
@@ -129,14 +130,14 @@ public:
     iLOOP
       {
 	int p,j;
-	p = pid(i, 1);  A[ p ] [ p ] = 1.- (0.1 * i) ;  b[ p ] =  1.-0.955;
-	p = pid(i,ny);  A[ p ] [ p ] = 1.-(0.1 * i) ;  b[ p ] = -1.-0.955;
+	p = pid(i, 1);  A[ p ] [ p ] = (i-1.) * dx;  b[ p ] =  (i-1.) * dx;
+	p = pid(i,ny);  A[ p ] [ p ] = (i-1.) * dx;  b[ p ] = (i+1.) * dx;
       }
     jLOOP
       {
 	int p,i;
-	p = pid(1, j);  A[ p ] [ p ] = 1.-(0.1 * j) ;  b[ p ] =  1.-0.955;
-	p = pid(nx,j);  A[ p ] [ p ] = 1.-(0.1 * j) ;  b[ p ] = -1.-0.955;
+	p = pid(1, j);  A[ p ] [ p ] = (j-1.) * dy;  b[ p ] =  (j-1.) * dy;
+	p = pid(nx,j);  A[ p ] [ p ] = (j-1.) * dy;  b[ p ] =  (j+1.) * dy;
       }
   }
 
