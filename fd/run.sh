@@ -1,5 +1,5 @@
 make clean
 make
-./fd
+./test
 gnuplot tmp.gp
 gv tmp.ps
