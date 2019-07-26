@@ -17,7 +17,7 @@ With this is also a test.cpp class which has unit testing for this class.
 It involves CppUnit as a testing framework.
 
 To install CppUnit on your system :
-Ubuntu/Debian: sudo apt-get install libcppunit-dev
+Ubuntu/Debian: sudo apt-get install libcppunit-doc libcppunit-dev
 CentOS/RHEL: yum install cppunit
 
 In our make file, you also need to link the cppunit.
