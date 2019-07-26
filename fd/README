@@ -1,0 +1,33 @@
+This project is for CVEN 5838: Computational Multi-Physics Production Software Development 
+Colorado University at Boulder
+Professor: Scott R. Runnels, Ph.D.
+
+Author : Daniel Lindberg
+
+This code has a fd.cpp class which is the finite difference 
+code , intended to form a linear system representing a 2D
+finite difference approximation to Laplaces equation on a 
+square.
+(2) Performs Gauss-Seidel iteration on that linear
+system up to a specified number of iterations
+or a specified tolerance.
+
+With this is also a test.cpp class which has unit testing for this class.
+
+It involves CppUnit as a testing framework.
+
+To install CppUnit on your system :
+Ubuntu/Debian: sudo apt-get install libcppunit-dev
+CentOS/RHEL: yum install cppunit
+
+In our make file, you also need to link the cppunit.
+
+to run the program:
+1)make
+2)./tests
+
+Checkout the results that are produced in :
+cppTestFd.xml
+or the various GNU plots produced:
+test_b.plt
+test_phi.plt

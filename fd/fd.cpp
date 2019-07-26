@@ -130,14 +130,14 @@ public:
     iLOOP
       {
 	int p,j;
-	p = pid(i, 1);  A[ p ] [ p ] = i+j;  b[ p ] =  i+j;
-	p = pid(i,ny);  A[ p ] [ p ] = i+j;  b[ p ] = i+j;
+	p = pid(i, 1);  A[ p ] [ p ] = dx*(i-1) + dy*(j-1);  b[ p ] = dx*(i-1) + dy*(j-1);
+	p = pid(i,ny);  A[ p ] [ p ] = dx*(i-1) + dy*(j-1);  b[ p ] = dx*(i-1) + dy*(j-1);
       }
     jLOOP
       {
 	int p,i;
-	p = pid(1, j);  A[ p ] [ p ] = i+j;  b[ p ] =  i+j;
-	p = pid(nx,j);  A[ p ] [ p ] = i+j;  b[ p ] =  i+j;
+	p = pid(1, j);  A[ p ] [ p ] = dx*(i-1) + dy*(j-1);  b[ p ] =  dx*(i-1) + dy*(j-1);
+	p = pid(nx,j);  A[ p ] [ p ] = dx*(i-1) + dy*(j-1);  b[ p ] =  dx*(i-1) + dy*(j-1);
       }
   }
 
