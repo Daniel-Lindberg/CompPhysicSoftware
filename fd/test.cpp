@@ -134,7 +134,7 @@ void TestFd::testGaussSeidel(void)
 	try 
 	{
 		//Call LS , make sure not exception is thrown
-		mTestObj->GaussSeidel(100, mTestObj->b , mTestObj->phi );
+		mTestObj->GaussSeidel(50, mTestObj->b , mTestObj->phi );
 	}
 	catch(std::exception& e)
 	{
